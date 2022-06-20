@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('front.index');
+});
+
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::get('panel','App\Http\Controllers\Back\Dashboard@index')->name('dashboard');
 });
