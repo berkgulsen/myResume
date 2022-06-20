@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('panel','App\Http\Controllers\Back\Dashboard@index')->name('dashboard');
 });
+
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::get('giris','App\Http\Controllers\Back\AuthController@login')->name('login');
+    //Route::post('giris','App\Http\Controllers\Back\AuthController@loginPost')->name('login.post');
+});
